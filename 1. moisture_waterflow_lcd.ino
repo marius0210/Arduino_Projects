@@ -70,33 +70,33 @@ void loop() {
     
   }
   else if(moisture <= 100){
-    Serial.println("In aer");
+    Serial.println("In air");
     lcd.setCursor(0,0);
-    lcd.print("In aer!!!");
+    lcd.print("In air!!!");
     digitalWrite(relayOutput, HIGH);
     lcd.setCursor(11,0);
     lcd.print("R: ON");
   }
   else if ((moisture <= DRY_SOIL)&&(moisture>100)) {
-    Serial.println("Uscat");
+    Serial.println("Dry");
     lcd.setCursor(0,0);
-    lcd.print("Uscat:");
+    lcd.print("Dry:");
     lcd.print(moisture);
     digitalWrite(relayOutput, HIGH);
     lcd.setCursor(11,0);
     lcd.print("R: ON");
   } else if (moisture <= HUMID_SOIL) {
-    Serial.println("Umed: ");
+    Serial.println("Moist: ");
     lcd.setCursor(0,0);
-    lcd.print("Umed: ");
+    lcd.print("Moist: ");
     lcd.print(moisture);
     digitalWrite(relayOutput, LOW);
     lcd.setCursor(11,0);
     lcd.print("R:OFF");
   } else {
-    Serial.println("In Apa");
+    Serial.println("In Water");
     lcd.setCursor(0,0);
-    lcd.print("F.ud: ");
+    lcd.print("V.moist: ");
     lcd.print(moisture);
      digitalWrite(relayOutput, LOW);
      lcd.setCursor(11,0);
